@@ -1,0 +1,16 @@
+Project structure (place files in this layout):
+
+/ (root)
+  index.html
+  services.html
+  case-studies.html
+  about.html
+  contact.html
+  privacy.html (optional - copy from privacy template)
+  README.md
+  assets/
+    styles.css
+    scripts.js
+    logo.png        <- replace with your SVG: assets/logo.svg
+    favicon.ico
+    team-placeholder.png

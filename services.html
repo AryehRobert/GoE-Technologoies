@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Services — GoE Technologies</title>
+  <meta name="description" content="Services: developer recruitment, training & enablement, and contract engineering from GoE Technologies." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="icon" href="assets/favicon.ico">
+
+  <!-- Header-specific overrides to make the logo white, visible and larger.
+       Only header changes are added inline here so you can drop this file in place. -->
+  <style>
+    .site-header {
+      background: #071a2f; /* brand dark for strong contrast */
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      position: sticky;
+      top: 0;
+      z-index: 60;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .logo-svg {
+      height: 66px;
+      width: auto;
+      display: block;
+      transition: height .16s ease, transform .12s ease;
+      filter: drop-shadow(0 10px 24px rgba(2,6,23,0.45));
+    }
+
+    /* Force the inline logo's main fills to white for maximum contrast.
+       Keep an inner pupil element with class .pupil to remain navy for subtle detail. */
+    .logo-svg [data-fill-main] { fill: #ffffff !important; }
+    .logo-svg .pupil { fill: #071a2f !important; }
+
+    @media (max-width: 980px) {
+      .logo-svg { height: 56px; }
+    }
+    @media (max-width: 560px) {
+      .logo-svg { height: 44px; filter: drop-shadow(0 8px 18px rgba(2,6,23,0.35)); }
+      .header-inner { padding: 10px 0; }
+    }
+
+    .nav-link { color: rgba(255,255,255,0.95); text-decoration: none; font-weight: 600; margin-left:12px; }
+    .btn-primary { background: #ce9730; color: #071a2f; border: 2px solid #ce9730; }
+  </style>
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="logo" href="index.html" aria-label="GoE Technologies — Home">
+        <!-- Inline SVG lockup (monogram + wordmark). Main shapes are set to white for high visibility.
+             The small inner "pupil" is left navy for contrast/detail. -->
+        <svg class="logo-svg" id="goe-logo" viewBox="0 0 780 120" role="img" aria-label="GoE Technologies logo" xmlns="http://www.w3.org/2000/svg">
+          <title>GoE Technologies</title>
+          <desc>Monogram and wordmark for GoE Technologies — white lockup optimized for dark header</desc>
+
+          <!-- Monogram (left) -->
+          <g id="monogram" transform="translate(0,0)" aria-hidden="true">
+            <circle cx="48" cy="60" r="44" data-fill-main="true"/>
+            <circle cx="48" cy="60" r="30" class="pupil" />
+            <circle cx="48" cy="60" r="8" class="pupil" />
+          </g>
+
+          <!-- Wordmark -->
+          <g id="wordmark" transform="translate(120,0)">
+            <text x="0" y="74" font-family="Playfair Display, serif" font-weight="700" font-size="62" data-fill-main="true">GoE</text>
+            <text x="0" y="110" font-family="Playfair Display, serif" font-weight="500" font-size="28" data-fill-main="true">technologies</text>
+          </g>
+        </svg>
+      </a>
+
+      <nav class="nav" aria-label="Main navigation">
+        <a class="nav-link" href="services.html">Services</a>
+        <a class="nav-link" href="case-studies.html">Case Studies</a>
+        <a class="nav-link" href="about.html">About</a>
+        <a class="btn btn-primary" href="contact.html">Hire Talent</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Services</h1>
+    <p class="lead">We help startups and SMBs hire engineers, train teams, and deliver software projects.</p>
+
+    <section id="recruitment" class="service">
+      <h2>Recruit & Place Engineers</h2>
+      <p>We source and vet senior engineers across multiple stacks (React, Node, Python, DevOps) and present a concise shortlist with technical assessments. Engagements can be contract, contract-to-hire, or full-time retained placements.</p>
+      <ul>
+        <li>Technical screening and take-home exercises</li>
+        <li>Shortlisting within 7–21 days for most roles</li>
+        <li>Flexible hiring terms (contract, hire, retained)</li>
+      </ul>
+      <p><a class="link" href="contact.html">Request hires →</a></p>
+    </section>
+
+    <section id="training" class="service">
+      <h2>Training & Enablement</h2>
+      <p>Practical workshops and hands-on enablement designed for non-technical teams (product, sales, operations). Workshops focus on real-world scenarios so your team leaves with practical skills.</p>
+      <ul>
+        <li>Intro to software concepts for non-tech teams</li>
+        <li>Product & engineering alignment workshops</li>
+        <li>Custom curriculum and follow-up coaching</li>
+      </ul>
+      <p><a class="link" href="contact.html">Book a workshop →</a></p>
+    </section>
+
+    <section id="contract" class="service">
+      <h2>Contract Engineering</h2>
+      <p>Vetted engineers and small teams help you ship product features, prototypes, and maintenance. We work in sprints, provide transparent estimates, and integrate with your existing processes.</p>
+      <ul>
+        <li>Fixed-scope sprints or time & material engagements</li>
+        <li>Senior-led teams and code reviews</li>
+        <li>Clear handover & documentation</li>
+      </ul>
+      <p><a class="link" href="contact.html">Start a project →</a></p>
+    </section>
+
+    <aside class="pricing-snapshot">
+      <h3>Engagement snapshot</h3>
+      <p>Recruitment: contingency or retained options. Training: one-off workshops or monthly enablement. Contracting: sprint-based or longer retainer.</p>
+      <p><a class="btn btn-outline" href="contact.html">Request a quote</a></p>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div><strong>GoE Technologies</strong><p>Hire great devs. Train teams. Deliver product work.</p></div>
+        <div>
+          <nav class="footer-nav">
+            <a href="services.html">Services</a>
+            <a href="case-studies.html">Case studies</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="privacy.html">Privacy</a>
+          </nav>
+        </div>
+      </div>
+      <p class="muted">© <span id="year"></span> GoE Technologies — All rights reserved</p>
+    </div>
+  </footer>
+
+  <script src="assets/scripts.js"></script>
+</body>
+</html>

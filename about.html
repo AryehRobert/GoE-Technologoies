@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About — GoE Technologies</title>
+  <meta name="description" content="About GoE Technologies — our mission, team and approach to recruitment, training and contracting." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="icon" href="assets/favicon.ico">
+
+  <!-- Header-specific overrides to make the logo white, visible and larger.
+       Inline so this page matches index/services/contact headers. -->
+  <style>
+    .site-header {
+      background: #071a2f; /* brand dark for strong contrast */
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      position: sticky;
+      top: 0;
+      z-index: 60;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .logo-svg {
+      height: 66px;
+      width: auto;
+      display: block;
+      transition: height .16s ease, transform .12s ease;
+      filter: drop-shadow(0 10px 24px rgba(2,6,23,0.45));
+    }
+
+    /* Force the inline logo's main fills to white for maximum contrast.
+       Keep an inner pupil element with class .pupil to remain navy for subtle detail. */
+    .logo-svg [data-fill-main] { fill: #ffffff !important; }
+    .logo-svg .pupil { fill: #071a2f !important; }
+
+    @media (max-width: 980px) {
+      .logo-svg { height: 56px; }
+    }
+    @media (max-width: 560px) {
+      .logo-svg { height: 44px; filter: drop-shadow(0 8px 18px rgba(2,6,23,0.35)); }
+      .header-inner { padding: 10px 0; }
+    }
+
+    .nav-link { color: rgba(255,255,255,0.95); text-decoration: none; font-weight: 600; margin-left:12px; }
+    .btn-primary { background: #ce9730; color: #071a2f; border: 2px solid #ce9730; }
+  </style>
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="logo" href="index.html" aria-label="GoE Technologies — Home">
+        <!-- Inline SVG lockup (monogram + wordmark). Main shapes are white for high visibility.
+             The small inner "pupil" is left navy for contrast/detail. -->
+        <svg class="logo-svg" id="goe-logo" viewBox="0 0 780 120" role="img" aria-label="GoE Technologies logo" xmlns="http://www.w3.org/2000/svg">
+          <title>GoE Technologies</title>
+          <desc>Monogram and wordmark for GoE Technologies — white lockup optimized for dark header</desc>
+
+          <!-- Monogram (left) -->
+          <g id="monogram" transform="translate(0,0)" aria-hidden="true">
+            <circle cx="48" cy="60" r="44" data-fill-main="true"/>
+            <circle cx="48" cy="60" r="30" class="pupil" />
+            <circle cx="48" cy="60" r="8" class="pupil" />
+          </g>
+
+          <!-- Wordmark -->
+          <g id="wordmark" transform="translate(120,0)">
+            <text x="0" y="74" font-family="Playfair Display, serif" font-weight="700" font-size="62" data-fill-main="true">GoE</text>
+            <text x="0" y="110" font-family="Playfair Display, serif" font-weight="500" font-size="28" data-fill-main="true">technologies</text>
+          </g>
+        </svg>
+      </a>
+
+      <nav class="nav" aria-label="Main navigation">
+        <a class="nav-link" href="services.html">Services</a>
+        <a class="nav-link" href="case-studies.html">Case Studies</a>
+        <a class="nav-link" href="about.html">About</a>
+        <a class="btn btn-primary" href="contact.html">Hire Talent</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>About GoE Technologies</h1>
+    <p class="lead">We’re a small team focused on matching great engineers, training non-tech teams, and delivering reliable contract work for startups and SMBs.</p>
+
+    <section class="mission">
+      <h2>Our mission</h2>
+      <p>To make technical hiring and enablement faster and more predictable for early-stage companies and growing teams. We combine a curated talent network with practical training and hands-on engineering to help companies move faster.</p>
+    </section>
+
+    <section class="team">
+      <h2>Team</h2>
+      <div class="team-grid">
+        <div class="team-member">
+          <img src="assets/ceo.jpeg" alt="Founder headshot" class="avatar">
+          <h3>Aryeh Robert</h3>
+          <p>Founder & CEO — engineering recruiter & trainer </p>
+        </div>
+        <div class="team-member">
+          <img src="assets/team-placeholder.png" alt="Senior engineer headshot" class="avatar">
+          <h3>Senior Engineer</h3>
+          <p>Lead engineer & contractor (example bio)</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="values">
+      <h2>How we work</h2>
+      <ul>
+        <li>Fast, transparent communication</li>
+        <li>Senior-first vetting and technical ownership</li>
+        <li>Practical training with measurable outcomes</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div><strong>GoE Technologies</strong><p>Hire great devs. Train teams. Deliver product work.</p></div>
+        <div>
+          <nav class="footer-nav">
+            <a href="services.html">Services</a>
+            <a href="case-studies.html">Case studies</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+          </nav>
+        </div>
+      </div>
+      <p class="muted">© <span id="year"></span> GoE Technologies — All rights reserved</p>
+    </div>
+  </footer>
+
+  <script src="assets/scripts.js"></script>
+</body>
+</html>

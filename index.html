@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GoE Technologies — Hire top devs, train teams, deliver projects</title>
+  <meta name="description" content="GoE Technologies matches top engineers, trains non-tech teams, and delivers contract engineering for startups and SMBs." />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="icon" href="assets/favicon.ico">
+  <!-- Header-specific overrides to make the logo white, visible and larger.
+       We keep all site-wide styles in assets/styles.css and only add focused overrides here
+       since you asked to modify only index.html.
+  -->
+  <style>
+    /* Make header background a strong navy to contrast with the white logo */
+    .site-header {
+      background: #071a2f; /* brand dark */
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      position: sticky;
+      top: 0;
+      z-index: 60;
+    }
+
+    /* layout tweaks for header */
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 0;
+    }
+
+    /* Logo sizing and visual emphasis */
+    .logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    /* Inline SVG logo sizing and shadow to improve legibility on varied backgrounds */
+    .logo-svg {
+      height: 66px; /* desktop target */
+      width: auto;
+      display: block;
+      transition: height .16s ease, transform .12s ease;
+      filter: drop-shadow(0 10px 24px rgba(2,6,23,0.45));
+    }
+
+    /* Force the inline logo's main fills to white for maximum contrast.
+       Keep an inner pupil element with class .pupil to remain navy for subtle detail. */
+    .logo-svg [data-fill-main] { fill: #ffffff !important; }
+    .logo-svg .pupil { fill: #071a2f !important; }
+
+    /* Slightly smaller on medium screens */
+    @media (max-width: 980px) {
+      .logo-svg { height: 56px; }
+    }
+    /* Mobile - keep it compact */
+    @media (max-width: 560px) {
+      .logo-svg { height: 44px; filter: drop-shadow(0 8px 18px rgba(2,6,23,0.35)); }
+      .header-inner { padding: 10px 0; }
+    }
+
+    /* Keep nav links readable on navy */
+    .nav-link { color: rgba(255,255,255,0.95); text-decoration: none; font-weight: 600; margin-left:12px; }
+    .btn-primary { background: #ce9730; color: #071a2f; border: 2px solid #ce9730; }
+  </style>
+  <!-- Replace the following script with your GA4 snippet if desired -->
+  <!-- <script src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX" async></script> -->
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="logo" href="index.html" aria-label="GoE Technologies — Home">
+        <!-- Inline SVG lockup (monogram + wordmark). Main shapes are set to white for high visibility.
+             The small inner "pupil" is left navy for contrast/detail. This ensures the logo is visible
+             without relying on external asset files or font availability. -->
+        <svg class="logo-svg" id="goe-logo" viewBox="0 0 780 120" role="img" aria-label="GoE Technologies logo" xmlns="http://www.w3.org/2000/svg">
+          <title>GoE Technologies</title>
+          <desc>Monogram and wordmark for GoE Technologies — white lockup optimized for dark header</desc>
+
+          <!-- Monogram (left) -->
+          <g id="monogram" transform="translate(0,0)" aria-hidden="true">
+            <!-- outer ring (white) -->
+            <circle cx="48" cy="60" r="44" data-fill-main="true"/>
+            <!-- inner ring — transparent with navy pupil so the "eye" detail shows on dark background -->
+            <circle cx="48" cy="60" r="30" class="pupil" />
+            <!-- small center pupil for detail (navy) -->
+            <circle cx="48" cy="60" r="8" class="pupil" />
+          </g>
+
+          <!-- Wordmark — uses two-line layout to mirror the uploaded brand -->
+          <g id="wordmark" transform="translate(120,0)">
+            <!-- "GoE" main word -->
+            <text x="0" y="74" font-family="Playfair Display, serif" font-weight="700" font-size="62" data-fill-main="true">GoE</text>
+            <!-- "technologies" subtitle -->
+            <text x="0" y="110" font-family="Playfair Display, serif" font-weight="500" font-size="28" data-fill-main="true">technologies</text>
+          </g>
+        </svg>
+      </a>
+
+      <nav class="nav" aria-label="Main navigation">
+        <a class="nav-link" href="services.html">Services</a>
+        <a class="nav-link" href="case-studies.html">Case Studies</a>
+        <a class="nav-link" href="about.html">About</a>
+        <a class="btn btn-primary" href="contact.html">Hire Talent</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h1>Hire great devs. Train non‑tech teams. Ship product work.</h1>
+          <p class="lead">GoE Technologies matches top engineers, upskills your team, and delivers contract projects — fast, transparent, and practical for startups and SMBs.</p>
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="contact.html">Hire Talent</a>
+            <a class="btn btn-outline" href="contact.html#book">Book a 15‑min Call</a>
+          </div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <svg width="360" height="230" viewBox="0 0 360 230" role="img" aria-label="Illustration">
+            <rect width="360" height="230" rx="14" fill="var(--neutral-100)"/>
+            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="var(--brand-dark)" font-family="Inter" font-size="14">Illustration / screenshot</text>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section id="trust" class="trust container">
+      <p class="muted">Trusted by early-stage startups and growing teams</p>
+      <div class="client-logos" aria-hidden="true">
+        <div class="logo-placeholder">Client A</div>
+        <div class="logo-placeholder">Client B</div>
+        <div class="logo-placeholder">Client C</div>
+      </div>
+    </section>
+
+    <section id="services-preview" class="container services">
+      <h2>What we do</h2>
+      <div class="grid-3">
+        <article class="card">
+          <h3>Recruit & Place Engineers</h3>
+          <p>Senior developers matched to your stack — contract or full‑time. Fast shortlists and technical screening designed for small teams.</p>
+          <p><a class="link" href="services.html#recruitment">Learn more →</a></p>
+        </article>
+        <article class="card">
+          <h3>Training & Enablement</h3>
+          <p>Hands-on workshops and enablement for non‑technical staff—product, sales, and operations get the technical confidence to move faster.</p>
+          <p><a class="link" href="services.html#training">Learn more →</a></p>
+        </article>
+        <article class="card">
+          <h3>Contract Engineering</h3>
+          <p>Feature work, prototypes, and maintenance delivered by vetted engineers on flexible terms — from short sprints to multi-month engagements.</p>
+          <p><a class="link" href="services.html#contract">Learn more →</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="how container">
+      <h2>How it works</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h4>Discovery</h4>
+          <p>Quick call to scope the role, training needs, or project requirements.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h4>Match & Train</h4>
+          <p>We shortlist candidates or create a tailored training plan and workshop materials.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h4>Deliver</h4>
+          <p>Hire, onboard, or start the contract — we move fast and keep you informed.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-highlight container">
+      <h2>Featured case study</h2>
+      <div class="case-card">
+        <h3>3-week placement that cut hiring time in half</h3>
+        <p><strong>Result:</strong> Placed a senior React engineer in 21 days; increased delivery velocity by 40%.</p>
+        <p><a class="link" href="case-studies.html#case01">Read full case study →</a></p>
+      </div>
+    </section>
+
+    <section class="testimonials container">
+      <h2>What clients say</h2>
+      <div class="grid-2">
+        <blockquote class="testimonial">
+          <p>“GoE found us a senior backend dev in two weeks.”</p>
+          <cite>— CTO, StartupX</cite>
+        </blockquote>
+        <blockquote class="testimonial">
+          <p>“Their training helped our sales team understand product priorities.”</p>
+          <cite>— Head of Sales, ScaleCo</cite>
+        </blockquote>
+      </div>
+    </section>
+
+    <section class="lead-capture container">
+      <h2>Ready to get started?</h2>
+      <p>Tell us what you need — hires, training, or a contract project. We’ll reply within 24 hours.</p>
+      <p><a class="btn btn-primary" href="contact.html">Contact Us</a> <a class="btn btn-outline" href="contact.html#book">Book a call</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <strong>GoE Technologies</strong>
+          <p>Hire great devs. Train teams. Deliver product work.</p>
+        </div>
+        <div>
+          <nav class="footer-nav" aria-label="Footer">
+            <a href="services.html">Services</a>
+            <a href="case-studies.html">Case studies</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="privacy.html">Privacy</a>
+          </nav>
+        </div>
+      </div>
+      <p class="muted">© <span id="year"></span> GoE Technologies — All rights reserved</p>
+    </div>
+  </footer>
+
+  <script src="assets/scripts.js"></script>
+</body>
+</html>

@@ -9,32 +9,74 @@
   <link rel="stylesheet" href="assets/styles.css">
   <link rel="icon" href="assets/favicon.ico">
 
+  <!-- Header-specific overrides to make the logo white, visible and larger.
+       Inline so this page matches index.html and services.html headers. -->
   <style>
-    .site-header { background: #071a2f; border-bottom: 1px solid rgba(255,255,255,0.04); position: sticky; top: 0; z-index: 60; }
-    .header-inner { display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px 0; }
-    .logo { display:flex; align-items:center; text-decoration:none; }
-    .logo-svg { height:66px; width:auto; display:block; filter: drop-shadow(0 10px 24px rgba(2,6,23,0.45)); }
+    .site-header {
+      background: #071a2f; /* brand dark */
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      position: sticky;
+      top: 0;
+      z-index: 60;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .logo-svg {
+      height: 66px;
+      width: auto;
+      display: block;
+      transition: height .16s ease, transform .12s ease;
+      filter: drop-shadow(0 10px 24px rgba(2,6,23,0.45));
+    }
+
+    /* Force the inline logo's main fills to white for maximum contrast.
+       Keep an inner pupil element with class .pupil to remain navy for subtle detail. */
     .logo-svg [data-fill-main] { fill: #ffffff !important; }
     .logo-svg .pupil { fill: #071a2f !important; }
-    @media (max-width:980px) { .logo-svg { height:56px; } }
-    @media (max-width:560px) { .logo-svg { height:44px; } .header-inner { padding:10px 0; } }
-    .nav-link { color: rgba(255,255,255,0.95); text-decoration:none; font-weight:600; margin-left:12px; }
-    .btn-primary { background:#ce9730; color:#071a2f; border:2px solid #ce9730; }
-    .form-status { margin-top: .5rem; font-size: .95rem; }
+
+    @media (max-width: 980px) {
+      .logo-svg { height: 56px; }
+    }
+    @media (max-width: 560px) {
+      .logo-svg { height: 44px; filter: drop-shadow(0 8px 18px rgba(2,6,23,0.35)); }
+      .header-inner { padding: 10px 0; }
+    }
+
+    .nav-link { color: rgba(255,255,255,0.95); text-decoration: none; font-weight: 600; margin-left:12px; }
+    .btn-primary { background: #ce9730; color: #071a2f; border: 2px solid #ce9730; }
   </style>
 </head>
 <body>
   <header class="site-header" role="banner">
     <div class="container header-inner">
       <a class="logo" href="index.html" aria-label="GoE Technologies — Home">
-        <svg class="logo-svg" viewBox="0 0 780 120" role="img" aria-label="GoE Technologies logo" xmlns="http://www.w3.org/2000/svg">
+        <!-- Inline SVG lockup (monogram + wordmark). Main shapes are white for high visibility.
+             The inner pupil remains navy for contrast/detail. -->
+        <svg class="logo-svg" id="goe-logo" viewBox="0 0 780 120" role="img" aria-label="GoE Technologies logo" xmlns="http://www.w3.org/2000/svg">
           <title>GoE Technologies</title>
           <desc>Monogram and wordmark for GoE Technologies — white lockup optimized for dark header</desc>
-          <g id="monogram" aria-hidden="true">
+
+          <!-- Monogram (left) -->
+          <g id="monogram" transform="translate(0,0)" aria-hidden="true">
             <circle cx="48" cy="60" r="44" data-fill-main="true"/>
             <circle cx="48" cy="60" r="30" class="pupil" />
             <circle cx="48" cy="60" r="8" class="pupil" />
           </g>
+
+          <!-- Wordmark -->
           <g id="wordmark" transform="translate(120,0)">
             <text x="0" y="74" font-family="Playfair Display, serif" font-weight="700" font-size="62" data-fill-main="true">GoE</text>
             <text x="0" y="110" font-family="Playfair Display, serif" font-weight="500" font-size="28" data-fill-main="true">technologies</text>
@@ -58,80 +100,49 @@
     <section id="book" class="contact-block">
       <h2>Book a discovery call</h2>
       <p>Prefer live chat? Book a 15‑minute call:</p>
+      <!-- Replace the href below with your Calendly link -->
       <a class="btn btn-outline" href="https://calendly.com/" target="_blank" rel="noopener">Book on Calendly</a>
     </section>
 
     <section class="contact-form-wrap">
       <h2>Send an inquiry</h2>
-
-      <!-- Optional: add reCAPTCHA v3 site script in head and set data-recaptcha-site-key below -->
-      <!-- <script src="https://www.google.com/recaptcha/api.js?render=YOUR_RECAPTCHA_SITE_KEY"></script> -->
-
-      <!-- Form is handled by assets/contact-submit.js which posts JSON to /api/contact.
-           _next hidden input instructs the client to redirect to the thank-you page on success. -->
-      <form class="contact-form"
-            action="#"
-            method="POST"
-            accept-charset="UTF-8"
-            role="form"
-            aria-label="Contact form"
-            data-mailto="robertaryehceo@goetechnologies.org"
-            data-recaptcha-site-key=""
-            data-next="/thank-you.html">
-
-        <!-- Redirect after success (serverless client will honor this). Adjust path if needed. -->
-        <input type="hidden" name="_next" value="/thank-you.html">
-
-        <!-- Honeypot (bots will fill) -->
-        <div style="position:absolute; left:-5000px; top:-5000px; visibility:hidden;" aria-hidden="true">
-          <label for="website">Leave this field blank</label>
-          <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
-        </div>
-
-        <label for="cf-name">
+      <!-- Formspree example action. Replace with your form endpoint or add data-netlify="true" for Netlify Forms -->
+      <form class="contact-form" action="https://formspree.io/f/{your-id}" method="POST">
+        <label>
           Name
-          <input id="cf-name" name="name" type="text" placeholder="Your name" required>
+          <input type="text" name="name" required>
         </label>
-
-        <label for="cf-company">
+        <label>
           Company
-          <input id="cf-company" name="company" type="text" placeholder="Company (optional)">
+          <input type="text" name="company">
         </label>
-
-        <label for="cf-email">
+        <label>
           Email
-          <!-- server expects _replyto or email; contact-submit.js will send whichever is present -->
-          <input id="cf-email" name="_replyto" type="email" placeholder="you@company.com" required>
+          <input type="email" name="email" required>
         </label>
-
-        <label for="cf-service">
+        <label>
           Which service?
-          <select id="cf-service" name="service" required>
-            <option value="">Select a service</option>
+          <select name="service">
             <option>Recruitment</option>
             <option>Training</option>
             <option>Contract Engineering</option>
             <option>Other</option>
           </select>
         </label>
-
-        <label for="cf-message">
+        <label>
           Message
-          <textarea id="cf-message" name="message" rows="4" placeholder="Brief summary of your needs" required></textarea>
+          <textarea name="message" rows="4" placeholder="Brief summary of your needs"></textarea>
         </label>
-
         <div class="form-actions">
           <button class="btn btn-primary" type="submit">Send inquiry</button>
-          <a class="btn btn-ghost" href="mailto:robertaryehceo@goetechnologies.org">Email robertaryehceo@goetechnologies.org</a>
+          <a class="btn btn-ghost" href="mailto:hello@goetech.com">Email hello@goetech.com</a>
         </div>
-
-        <!-- form status inserted by contact-submit.js -->
       </form>
     </section>
 
     <section class="contact-info">
       <h3>Other ways to reach us</h3>
-      <p>Email: <a href="mailto:robertaryehceo@goetechnologies.org">robertaryehceo@goetechnologies.org</a></p>
+      <p>Email: <a href="mailto:hello@goetech.com">hello@goetech.com</a></p>
       <p>LinkedIn: <a href="#" target="_blank" rel="noopener">GoE Technologies</a></p>
     </section>
   </main>
@@ -154,9 +165,6 @@
     </div>
   </footer>
 
-  <!-- Client-side handler for serverless contact endpoint (updated to honor _next/data-next) -->
-  <script src="/assets/contact-submit.js" defer></script>
-  <!-- Existing small site script (year) -->
-  <script src="assets/scripts.js" defer></script>
+  <script src="assets/scripts.js"></script>
 </body>
 </html>
