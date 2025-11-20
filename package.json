@@ -1,0 +1,19 @@
+{
+  "name": "goe-technologies-contact",
+  "version": "1.0.0",
+  "description": "Serverless contact form for GoE Technologies",
+  "main": "api/contact.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "contact",
+    "serverless",
+    "sendgrid"
+  ],
+  "author": "GoE Technologies",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@sendgrid/mail": "^7.7.0"
+  }
+}
