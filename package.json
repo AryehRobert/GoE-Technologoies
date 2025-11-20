@@ -1,0 +1,22 @@
+{
+  "name": "goe-technologies-contact-form",
+  "version": "1.0.0",
+  "description": "Serverless contact form for GoE Technologies",
+  "main": "api/contact.js",
+  "scripts": {
+    "test": "echo \"No tests configured\" && exit 0"
+  },
+  "keywords": [
+    "contact-form",
+    "serverless",
+    "vercel",
+    "sendgrid"
+  ],
+  "author": "GoE Technologies",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {},
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
