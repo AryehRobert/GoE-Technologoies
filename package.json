@@ -1,0 +1,21 @@
+{
+  "name": "goe-technologies",
+  "version": "1.0.0",
+  "description": "GoE Technologies website with serverless contact form",
+  "main": "api/contact.js",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "vercel build",
+    "deploy": "vercel"
+  },
+  "keywords": [
+    "contact-form",
+    "serverless",
+    "vercel",
+    "sendgrid"
+  ],
+  "author": "GoE Technologies",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {}
+}
